@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XXXXXX</title>
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Noto+Sans+JP:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://kit.fontawesome.com/80e8220817.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="custom-cursor"></div>
+    <canvas id="dot-background" aria-hidden="true"></canvas>
+    <main>
+        <section class="area secret-page">
+            <button class="theme-toggle" id="theme-toggle" type="button" aria-label="テーマを切り替え" title="テーマ切り替え"></button>
+            <a class="secret-back" href="index.html" aria-label="メインページへ戻る">← back</a>
+            <div class="secret-intro">
+                <h1>Algorithm Visualizer</h1>
+            </div>
+            <div class="algorithm-wrap">
+                <div class="algorithm-picker" role="group" aria-label="アルゴリズム選択">
+                    <button class="algorithm-choice is-selected" data-algorithm="bubble" type="button" aria-pressed="true">バブルソート</button>
+                    <button class="algorithm-choice" data-algorithm="quick" type="button" aria-pressed="false">クイックソート</button>
+                </div>
+                <canvas id="algorithm-canvas" aria-label="バブルソートのアルゴリズム可視化"></canvas>
+                <div class="algorithm-status" aria-live="polite">
+                    <span id="algorithm-count">比較 0</span>
+                    <span id="algorithm-message">スタートすると実行します</span>
+                </div>
+            </div>
+            <div class="algorithm-controls">
+                <button class="algorithm-button" id="algorithm-start" type="button">スタート</button>
+                <button class="algorithm-button" id="algorithm-reset" type="button">シャッフル</button>
+            </div>
+            <div class="footer">
+                <small>&copy; 2026 mofh.dev</small>
+            </div>
+        </section>
+    </main>
+    <script src="assets/js/magnetic.js"></script>
+    <script src="assets/js/dot-background.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/page-transition.js"></script>
+    <script src="assets/js/constellation.js"></script>
+</body>
+
+</html>

@@ -5,11 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XXXXXX</title>
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Noto+Sans+JP:wght@100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://kit.fontawesome.com/80e8220817.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <div class="custom-cursor"></div>
+    <canvas id="dot-background" aria-hidden="true"></canvas>
     <nav class="dot-nav">
         <ul>
             <li><a href="#hero" data-tooltip="Hero"></a></li>
@@ -17,69 +26,97 @@
             <li><a href="#lang-env" data-tooltip="Environments"></a></li>
             <li><a href="#person" data-tooltip="Self Intro"></a></li>
             <li><a href="#links" data-tooltip="Links"></a></li>
+            <li><a href="#contact" data-tooltip="Contact"></a></li>
         </ul>
     </nav>
     <main>
-        <section class="area" id="hero">
-            <h1>mofh / Beans</h1>
-            <p>なぜか名義が2つ</p>
+        <section class="area" id="hero"><button class="theme-toggle" id="theme-toggle" type="button"
+                aria-label="ライトモードに切り替え" title="テーマ切り替え">
+            </button>
+            <div class="display-name">
+                <div class="dname-heading">
+                    <h1>mofh</h1>
+                    <h1>Beans</h1>
+                </div>
+                <p>A personal website introducing my skills and a bit about myself ;D</p>
+            </div>
         </section>
         <section class="area" id="products">
             <h2>Products</h2>
-            <div class="card">
-                <a href="">
-                    <img src="assets/img/XXXXX" alt="">
-                    <h3>XXXXXXXX</h3>
-                    <p>紹介をかく</p>
-                </a>
+            <p>別に実績がないわけじゃないんだからねっ！？</p>
+            <!--
+            <div class="card-list">
+                <div>
+                    <a href="" class="card">
+                        <img src="assets/img/products/SS1.png" alt="">
+                        <h3>XXXXXXXX</h3>
+                        <p>紹介をかく</p>
+                    </a>
+                </div>
+                <div>
+                    <a href="" class="card">
+                        <img src="assets/img/products/SS1.png" alt="">
+                        <h3>XXXXXXXX</h3>
+                        <p>紹介をかく</p>
+                    </a>
+                </div>
+                <div>
+                    <a href="" class="card">
+                        <img src="assets/img/products/SS1.png" alt="">
+                        <h3>XXXXXXXX</h3>
+                        <p>紹介をかく</p>
+                    </a>
+                </div>
+                <div>
+                    <a href="" class="card">
+                        <img src="assets/img/products/SS1.png" alt="">
+                        <h3>XXXXXXXX</h3>
+                        <p>紹介をかく</p>
+                    </a>
+                </div>
+                <div>
+                    <a href="" class="card">
+                        <img src="assets/img/products/SS1.png" alt="">
+                        <h3>XXXXXXXX</h3>
+                        <p>紹介をかく</p>
+                    </a>
+                </div>
+                <div>
+                    <a href="" class="card">
+                        <img src="assets/img/products/SS1.png" alt="">
+                        <h3>XXXXXXXX</h3>
+                        <p>紹介をかく</p>
+                    </a>
+                </div>
+                <div>
+                    <a href="" class="card">
+                        <img src="assets/img/products/SS1.png" alt="">
+                        <h3>XXXXXXXX</h3>
+                        <p>紹介をかく</p>
+                    </a>
+                </div>
+                <div class="more">
+                    <p>and more…</p>
+                </div>
             </div>
-            <div class="card">
-                <a href="">
-                    <img src="assets/img/XXXXX" alt="">
-                    <h3>XXXXXXXX</h3>
-                    <p>紹介をかく</p>
-                </a>
-            </div>
-            <div class="card">
-                <a href="">
-                    <img src="assets/img/XXXXX" alt="">
-                    <h3>XXXXXXXX</h3>
-                    <p>紹介をかく</p>
-                </a>
-            </div>
-            <div class="card">
-                <a href="">
-                    <img src="assets/img/XXXXX" alt="">
-                    <h3>XXXXXXXX</h3>
-                    <p>紹介をかく</p>
-                </a>
-            </div>
-            <div class="card">
-                <a href="">
-                    <img src="assets/img/XXXXX" alt="">
-                    <h3>XXXXXXXX</h3>
-                    <p>紹介をかく</p>
-                </a>
-            </div>
-            <div class="card">
-                <a href="">
-                    <img src="assets/img/XXXXX" alt="">
-                    <h3>XXXXXXXX</h3>
-                    <p>紹介をかく</p>
-                </a>
-            </div>
+            -->
         </section>
         <section class="area" id="lang-env">
             <div>
-                <h2>Languages</h2>
-                <div>
-                    <img src="assets/img/icon/lang/XXXXX" alt="">
-                    <img src="assets/img/icon/lang/XXXXX" alt="">
-                    <img src="assets/img/icon/lang/XXXXX" alt="">
-                    <img src="assets/img/icon/lang/XXXXX" alt="">
+                <h2>Skills and Tools</h2>
+                <div class="lang-icon-list">
+                    <i class="devicon-html5-plain"></i>
+                    <i class="devicon-css3-plain"></i>
+                    <i class="devicon-javascript-plain"></i>
+                    <i class="devicon-cplusplus-plain"></i>
+                    <i class="devicon-python-plain"></i>
+                    <i class="devicon-json-plain"></i>
+                    <i class="devicon-typescript-plain"></i>
+                    <i class="devicon-vercel-original"></i>
+                    <i class="devicon-vitejs-plain"></i>
                 </div>
-                <h2>Environments</h2>
-                <div>
+                <h2 class="env-topmargin">Environments</h2>
+                <div class="tables">
                     <h3>Services and Software</h3>
                     <table>
                         <thead>
@@ -93,16 +130,16 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>VSCode</td>
-                                <td>Gemini</td>
-                                <td>Antigravity</td>
-                                <td>Github Copilot</td>
-                                <td>Zen Browser</td>
+                                <td data-label="Editor">VSCode</td>
+                                <td data-label="Chat AI">Gemini</td>
+                                <td data-label="Primary Agent AI">Antigravity</td>
+                                <td data-label="Secondary Agent AI">Github Copilot</td>
+                                <td data-label="Browser">Zen Browser</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <div>
+                <div class="tables">
                     <h3>PC Specs</h3>
                     <div class="main-pc">
                         <h4>Main PC</h4>
@@ -120,13 +157,13 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Ryzen 7 5800X</td>
-                                    <td>RTX 3060 12GB OC</td>
-                                    <td>DDR4 32GB</td>
-                                    <td>SSD m.2 512GB</td>
-                                    <td>SSD SATA 1TB</td>
-                                    <td>Windows11</td>
-                                    <td>Zorin OS</td>
+                                    <td data-label="CPU">Ryzen 7 5800X</td>
+                                    <td data-label="GPU">RTX 3060 12GB OC</td>
+                                    <td data-label="Memory">DDR4 32GB</td>
+                                    <td data-label="Main Storage">SSD m.2 512GB</td>
+                                    <td data-label="Sub Storage">SSD SATA 1TB</td>
+                                    <td data-label="Primary OS">Windows 11</td>
+                                    <td data-label="Secondary OS">Zorin OS</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -136,6 +173,7 @@
                         <table>
                             <thead>
                                 <tr>
+                                    <th>Model</th>
                                     <th>CPU</th>
                                     <th>GPU</th>
                                     <th>Memory</th>
@@ -145,11 +183,12 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Ryzen 7 8840U</td>
-                                    <td>Radeon 780M Graphics</td>
-                                    <td>DDR5 32GB</td>
-                                    <td>SSD m.2 1TB</td>
-                                    <td>Windows11</td>
+                                    <td data-label="Model">Inspiron 14 5445</td>
+                                    <td data-label="CPU">Ryzen 7 8840U</td>
+                                    <td data-label="GPU">Radeon 780M Graphics</td>
+                                    <td data-label="Memory">DDR5 32GB</td>
+                                    <td data-label="Main Storage">SSD m.2 1TB</td>
+                                    <td data-label="OS">Windows 11</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -157,44 +196,114 @@
                 </div>
             </div>
         </section>
-        <section class="area" id="person">
-            <h2>Self Introduction</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Screen Name 1</th>
-                        <th>Screen Name 2</th>
-                        <th>Age</th>
-                        <th>Job</th>
-                        <th>Living Pref</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>mofh</td>
-                        <td>Beans</td>
-                        <td>JSで自動算出</td>
-                        <td>高校生</td>
-                        <td>千葉県</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p>駄文を書く</p>
+        <section class="area intro" id="person">
+            <div class="intro-inner">
+                <h2>Self Introduction</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Screen Name 1</th>
+                            <th>Screen Name 2</th>
+                            <th>First Person Pronoun</th>
+                            <th>Age</th>
+                            <th>Job</th>
+                            <th>Living Pref</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Screen Name 1">mofh</td>
+                            <td data-label="Screen Name 2">Beans</td>
+                            <td data-label="First Person Pronoun">わたし</td>
+                            <td data-label="Age" id="age"></td>
+                            <td data-label="Job">高校生</td>
+                            <td data-label="Living Pref">千葉県</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>はじめまして。(文字列)です。mofhでもBeansでもどちらでもいいです。</p>
+                <p>本当はmofhに完全移行したいのですが、長年使っていたBeansのハンドルネームが忘れられず2つになりました。</p>
+                <p>近況はブログやTwitterにありますのでわたしのSNSどもをぜひ確認してくださいね。</p>
+                <p>馬が合う人を探してます！下の表からこいつと趣味合うなと思ったら連絡ください。</p>
+                <iframe class="airtable-embed" src="https://airtable.com/embed/appYCkS3fWxBNvaYB/shrYjAbw5xIMaDhUB" frameborder="0" onmousewheel="" style="background: transparent; border: 1px solid #ccc; zoom: 0.8;"></iframe>
+            </div>
         </section>
-        <section class="area" id="links">
+        <section class="area sns-list-sec" id="links">
             <h2>SNS Links</h2>
-            <ul>
-                <li><a href=""><img src="assets/img/icon/sns/XXXXXX" alt=""></a></li>
-                <li><a href=""><img src="assets/img/icon/sns/XXXXXX" alt=""></a></li>
-                <li><a href=""><img src="assets/img/icon/sns/XXXXXX" alt=""></a></li>
-                <li><a href=""><img src="assets/img/icon/sns/XXXXXX" alt=""></a></li>
-                <li><a href=""><img src="assets/img/icon/sns/XXXXXX" alt=""></a></li>
-            </ul>
+            <div class="sns-list">
+                <ul class="snses">
+                    <li><a target="_blank" rel=”noopener noreferrer” href="https://x.com/beans_hp0"><img src="assets/img/icon/sns/x.svg" alt="">
+                            <p>メインアカウント</p>
+                        </a></li>
+                    <li><a target="_blank" rel=”noopener noreferrer” href="https://x.com/tyn_mame"><img src="assets/img/icon/sns/x.svg" alt="">
+                            <p>学生アカウント</p>
+                        </a></li>
+                    <li><a target="_blank" rel=”noopener noreferrer” href="https://x.com/mame126_vrc"><img src="assets/img/icon/sns/x.svg" alt="">
+                            <p>VRChat用アカウント</p>
+                        </a></li>
+                    <li><a target="_blank" rel=”noopener noreferrer” href="https://note.com/eating_mame"><img src="assets/img/icon/sns/note.svg" alt="">
+                            <p>noteアカウント</p>
+                        </a></li>
+                    <li class="closed"><a><img src="assets/img/icon/sns/blog.svg" alt="">
+                            <p>更新度低いブログ</p>
+                        </a></li>
+                    <li><a target="_blank" rel=”noopener noreferrer” href="https://vrchat.com/home/user/usr_13703509-eed8-4b3e-9d70-e6d7a20b97f0"><img
+                                class="no-theme-filter" src="assets/img/icon/sns/vrchat.svg" alt="">
+                            <p>VRChatアカウント</p>
+                        </a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="area contact-area" id="contact">
+            <div class="contact-inner">
+                <h2>Contact</h2>
+                <p>ご連絡やお問い合わせはこちらからどうぞ。</p>
+                <form class="contact-form" action="https://formspree.io/f/mjyvbakr" method="POST">
+                    <label>
+                        <span>お名前</span>
+                        <input type="text" name="name" autocomplete="name" required>
+                    </label>
+                    <label>
+                        <span>メールアドレス</span>
+                        <input type="email" name="_replyto" autocomplete="email" required>
+                    </label>
+                    <label>
+                        <span>お問い合わせ内容</span>
+                        <textarea name="message" rows="6" required></textarea>
+                    </label>
+
+                    <button type="submit">送信する <span aria-hidden="true">→</span></button>
+                </form>
+            </div>
+        </section>
+        <section class="area">
+            <canvas id="easter-egg-canvas" aria-label="秘密の星座"></canvas>
+            <small>&copy; 2026 mofh.dev</small>
         </section>
     </main>
-    <footer>
-        <small>&copy; 2026 mofh.dev</small>
-    </footer>
+    <script src="assets/js/magnetic.js"></script>
+    <script src="assets/js/dot-nav.js"></script>
+    <script src="assets/js/dot-background.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/easter-egg.js"></script>
+    <script src="assets/js/page-transition.js"></script>
+    <script>
+        function calcAge() {
+            const dage = document.querySelector('#age');
+            const today = new Date();
+            const birth = new Date("2010/12/6");
+
+            let age = today.getFullYear() - birth.getFullYear();
+            const thisYearBirthday = new Date(today.getFullYear(), birth.getMonth(), birth.getDate());
+
+            if (today < thisYearBirthday) {
+                age--;
+            }
+
+            dage.textContent = `${age}歳`
+        }
+        calcAge();
+    </script>
 </body>
 
 </html>
