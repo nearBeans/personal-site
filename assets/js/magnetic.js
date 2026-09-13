@@ -1,8 +1,8 @@
-// 1. querySelectorAll に修正し、変数を宣言
 const targets = document.querySelectorAll(".card, .dot-nav a, a, .theme-toggle, input, button, textarea");
 const cursor = document.querySelector('.custom-cursor');
 const supportsMagneticCursor = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 const magneticThreshold = 32;
+const magneticHysteresis = 8;
 
 if (!supportsMagneticCursor || !cursor) {
     cursor?.remove();
@@ -12,7 +12,6 @@ let mouseX = 0;
 let mouseY = 0;
 let currentX = 0;
 let currentY = 0;
-let activeTarget = null;
 let magneticTarget = null;
 
 const factor = 0.1;
@@ -41,31 +40,23 @@ function findMagneticTarget(x, y) {
     return closestTarget;
 }
 
-window.addEventListener('pointerdown', (event) => {
-    const clickedInteractive = event.target instanceof Element
-        ? event.target.closest('button, input, textarea')
-        : null;
-    if (clickedInteractive) {
-        return;
-    }
-
-    const clickedTarget = findMagneticTarget(event.clientX, event.clientY);
-    if (!(clickedTarget instanceof HTMLElement) || !clickedTarget.matches('button, input, textarea')) {
-        return;
-    }
-
-    event.preventDefault();
-    clickedTarget.click();
-});
-
 window.addEventListener('click', (event) => {
     const clickedInteractive = event.target instanceof Element
         ? event.target.closest('button, a, input, textarea')
         : null;
+    
+    // 既にインタラクティブ要素をクリックしていたら、磁気ターゲットを探さない
     if (clickedInteractive) {
         return;
     }
 
+    // マグネティックターゲットが存在する場合、それをクリック
+    if (magneticTarget instanceof HTMLElement) {
+        magneticTarget.click();
+        return;
+    }
+
+    // 磁気ターゲットがなければ、最も近い要素を探す
     const clickedTarget = findMagneticTarget(event.clientX, event.clientY);
     if (!(clickedTarget instanceof HTMLElement)) {
         return;
@@ -97,30 +88,6 @@ window.addEventListener('click', (event) => {
     targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
 
-targets.forEach((target) => {
-    target.addEventListener('mouseenter', () => {
-        activeTarget = target;
-        cursor.classList.add('is-hovered');
-
-        // 相手要素の計算済み CSS (border-radius) を取得
-        const computedStyle = window.getComputedStyle(target);
-        const radius = computedStyle.borderRadius;
-
-        // 単位（px や % など）もそのまま含まれているので直接代入でOK！
-        cursor.style.borderRadius = radius;
-    });
-
-    target.addEventListener('mouseleave', () => {
-        activeTarget = null;
-        cursor.classList.remove('is-hovered');
-
-        // 元のサイズと丸み（円）に戻す
-        cursor.style.width = '40px';
-        cursor.style.height = '40px';
-        cursor.style.borderRadius = '50%'; // 元の正円に戻す
-    });
-});
-
 // render() ループ内で全要素との距離を計算するアプローチ
 function render() {
     let targetX = mouseX;
@@ -143,6 +110,18 @@ function render() {
             closestDistance = distance;
         }
     });
+
+    if (magneticTarget && magneticTarget !== closestTarget) {
+        const rect = magneticTarget.getBoundingClientRect();
+        const closestX = Math.max(rect.left, Math.min(mouseX, rect.right));
+        const closestY = Math.max(rect.top, Math.min(mouseY, rect.bottom));
+        const currentDistance = Math.hypot(mouseX - closestX, mouseY - closestY);
+
+        if (currentDistance <= magneticThreshold
+            && currentDistance <= closestDistance + magneticHysteresis) {
+            closestTarget = magneticTarget;
+        }
+    }
 
     if (magneticTarget !== closestTarget) {
         magneticTarget?.classList.remove('is-magnetic-hover');
