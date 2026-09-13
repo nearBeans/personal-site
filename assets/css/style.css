@@ -103,11 +103,18 @@ section:first-child {
 }
 
 .display-name {
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    text-align: left;
+}
+
+.display-name > h1:first-child {
+    margin: 0 0 18px;
+}
+
+.display-name > h1:first-child img {
+    display: block;
+    width: clamp(80px, 12vw, 140px);
+    height: auto;
+    margin: 0 auto;
 }
 
 section {
@@ -119,6 +126,10 @@ h1 {
     font-size: 3rem;
 }
 
+.display-me img {
+    width: clamp(120px, 20vw, 200px);
+}
+
 .dname-heading h1:first-child:after {
     content: "\00A0/\00A0";
     white-space: pre;
@@ -126,6 +137,14 @@ h1 {
 
 .dname-heading {
     display: flex;
+}
+
+.display-me {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    min-height: 100%;
 }
 
 h2 {
@@ -683,7 +702,11 @@ a.easter-egg-link {
     }
 
     .display-name {
-        width: calc(100% - 32px);
+        width: auto;
+    }
+
+    .display-me {
+        min-height: 100vh;
     }
 
     h1 {
@@ -695,7 +718,7 @@ a.easter-egg-link {
     }
 
     .dname-heading {
-        justify-content: center;
+        justify-content: flex-start;
         flex-wrap: wrap;
     }
 
@@ -801,6 +824,22 @@ a.easter-egg-link {
 
     .area:last-child small {
         margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .display-me {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+
+    .display-name {
+        text-align: center;
+    }
+
+    .dname-heading {
+        justify-content: center;
     }
 }
 
